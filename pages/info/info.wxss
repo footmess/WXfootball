@@ -1,0 +1,15 @@
+.inner {
+	color: green;
+}
+.weather {
+	margin-top: 50px;
+	display: flex;
+	flex-direction: column;
+}
+
+.city,
+.condition,
+.temp {
+	width: 100%;
+	margin-top: 10px;
+}

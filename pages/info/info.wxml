@@ -1,0 +1,18 @@
+<view class="container">
+    <view class="userinfo">
+        <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo">
+            获取头像昵称
+        </button>
+        <block wx:else>
+            <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+            <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+        </block>
+    </view>
+    <view wx-if="{{true}}" class="location">
+        <text class="city">{{weater.location.name}}</text>
+        <text class="condition">{{weater.now.text}}</text>
+        <text class="temp">{{weater.now.temperature}}</text>
+    </view>
+    <view class="inner">啪啪啪啪啪啪铺铺铺铺铺</view>
+    <abc></abc>
+</view>

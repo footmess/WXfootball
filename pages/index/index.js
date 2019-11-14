@@ -43,7 +43,7 @@ Page({
 			});
 		}
 	},
-	getUserInfo: function(e) {
+	aq: function(e) {
 		console.log(e);
 		app.globalData.userInfo = e.detail.userInfo;
 		this.setData({
