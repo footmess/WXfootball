@@ -1,1 +1,2 @@
 <view class="inner">{{innerText}}&&{{name}}</view>
+<button bindtap="changeName">改变name</button>

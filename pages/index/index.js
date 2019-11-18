@@ -11,8 +11,19 @@ Page({
 	},
 	//事件处理函数
 	bindViewTap: function() {
+		console.log('开始导航');
 		wx.navigateTo({
-			url: '../logs/logs'
+			url: '/pages/logs/logs'
+		});
+	},
+	changeText: function() {
+		this.setData({
+			motto: 'world hello'
+		});
+	},
+	addNewField: function() {
+		this.setData({
+			'newField.text': 'new data'
 		});
 	},
 	onLoad: function() {

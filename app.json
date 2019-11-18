@@ -1,5 +1,5 @@
 {
-	"pages": [ "pages/index/index", "pages/logs/logs", "pages/info/info" ],
+	"pages": [ "pages/index/index", "pages/logs/logs", "pages/info/info", "pages/setting/setting" ],
 	"window": {
 		"backgroundTextStyle": "light",
 		"navigationBarBackgroundColor": "#fff",
@@ -37,6 +37,11 @@
 	"debug": true,
 	"requiredBackgroundModes": [ "audio", "location" ],
 	"usingComponents": { "screenbar": "components/screenbar/screenbar/" },
+	"permission": {
+		"scope.userLocation": {
+			"desc": "I WANT U"
+		}
+	},
 	"style": "v2",
 	"sitemapLocation": "sitemap.json"
 }

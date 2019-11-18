@@ -1,5 +1,6 @@
 //获取app实例
 var app = getApp();
+console.log(app);
 Page({
 	data: {
 		logs: [],
@@ -10,6 +11,9 @@ Page({
 	},
 	onLoad: function() {
 		console.log('start');
+		console.log(wx.getLaunchOptionsSync());
+		//到当前页面的路径
+		console.log(this.route);
 		var _this = this;
 		if (app.globalData.userInfo) {
 			this.setData({
@@ -43,7 +47,7 @@ Page({
 			success: (res) => {
 				console.log(this);
 				console.log(_this);
-				//wx.setData()，相当于vue的$.set()设置响应式数据,把数据从逻辑层应用到渲染层
+				//setData()是页面page的原型上的方法，相当于vue的$.set()设置响应式数据,把数据从逻辑层应用到渲染层
 				//setData 函数用于将数据从逻辑层发送到视图层（异步），同时改变对应的 this.data 的值（同步）
 				this.setData({
 					weather: res.data.data[0]
@@ -51,6 +55,19 @@ Page({
 				console.log(this.data.weather);
 			}
 		});
+	},
+	//监听用户点击转发按钮(button组件open-type="share")或者右上角菜单"转发"按钮的行为，并自定义转发内容
+	onShareAppMessage: function(res) {
+		if (res.from === 'button') {
+			console.log(res.target);
+		}
+		if (res.from === 'menu') {
+			console.log(res.target);
+		}
+		return {
+			title: '自定义标题',
+			path: '/pages/info'
+		};
 	},
 	bindA: function() {
 		// this.getWeather();
@@ -68,7 +85,7 @@ Page({
 			}
 		});
 	},
-	getUserInfo: function(e) {
+	aw: function(e) {
 		console.log(e);
 		app.globalData.userInfo = e.detail.userInfo;
 		this.setData({
